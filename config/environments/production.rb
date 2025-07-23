@@ -15,6 +15,11 @@ Rails.application.configure do
   # Turn on fragment caching in view templates.
   config.action_controller.perform_caching = true
 
+  config.action_controller.default_url_options = {
+    host: "blog.carterdboyle.ca",
+    protocol: "https"
+  }
+
   # Cache assets for far-future expiry since they are all digest stamped.
   config.public_file_server.headers = { "cache-control" => "public, max-age=#{1.year.to_i}" }
 
@@ -78,6 +83,8 @@ Rails.application.configure do
 
   # Only use :id for inspections in production.
   config.active_record.attributes_for_inspect = [ :id ]
+
+  config.hosts << "blog.carterdboyle.ca"
 
   # Enable DNS rebinding protection and other `Host` header attacks.
   # config.hosts = [

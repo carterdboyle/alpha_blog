@@ -41,6 +41,9 @@ RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y nodejs && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
+# Install yarn
+RUN npm install --global yarn
+
 # Install application gems
 COPY Gemfile Gemfile.lock ./
 RUN bundle install && \

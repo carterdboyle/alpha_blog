@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo-rails": "^8.0.16",
     "@popperjs/core": "^2.11.8",
     "autoprefixer": "^10.4.21",
     "bootstrap": "^5.3.7",
@@ -13,9 +15,14 @@
     "build:css:compile": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
     "build:css:prefix": "postcss ./app/assets/builds/application.css --use=autoprefixer --output=./app/assets/builds/application.css",
     "build:css": "npm run build:css:compile && npm run build:css:prefix",
-    "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext scss --exec \"npm run build:css\""
+    "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext scss --exec \"npm run build:css\"",
+    "build": "webpack --config webpack.config.js"
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "devDependencies": {
+    "webpack": "^5.100.2",
+    "webpack-cli": "^6.0.1"
+  }
 }

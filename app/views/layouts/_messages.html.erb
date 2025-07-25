@@ -1,6 +1,6 @@
 <div class="container">
   <% flash.each do | name, msg | %>
-    <div class="d-flex justify-content-between align-items-center alert alert-success alert-dismissable fade show" role="alert">
+    <div class="d-flex justify-content-between align-items-center alert alert-<%= name == 'alert' ? 'danger' : 'success' %> alert-dismissable fade show" role="alert">
       <%= msg %>
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>

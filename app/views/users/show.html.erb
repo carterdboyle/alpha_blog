@@ -8,8 +8,16 @@
 
 <h3 class="text-center mt-4">Articles</h3>
 
-<% if @user.articles.length > 0 %>
+<div class="flickr_pagination">
+  <%= will_paginate @articles, :container => false %>
+</div>
+
+<% if @articles.length > 0 %>
   <%= render 'articles/article' %>
 <% else %>
   <div class="text-center mt-4">No articles yet. Post an article to view list</div>
 <% end %>
+
+<div class="flickr_pagination mb-4">
+  <%= will_paginate @articles, :container => false %>
+</div>

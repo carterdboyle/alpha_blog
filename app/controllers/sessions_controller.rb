@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
       flash[:notice] = "Logged in succesfully"
-      redirect_to user
+      redirect_to user_path(user)
     else
       # if we used simply flash[:alert] it would persist for another http
       # request, which is not what we want
